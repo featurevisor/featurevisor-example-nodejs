@@ -1,5 +1,4 @@
-// import { createInstance } from "@featurevisor/sdk";
-const { createInstance } = require("@featurevisor/sdk");
+import { createInstance } from "@featurevisor/sdk";
 
 const DATAFILE_URL =
   "https://featurevisor-example-cloudflare.pages.dev/production/datafile-tag-all.json";
