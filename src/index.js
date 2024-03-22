@@ -1,4 +1,6 @@
-import { createInstance } from "@featurevisor/sdk";
+import FeaturevisorSDK from "@featurevisor/sdk";
+
+const { createInstance } = FeaturevisorSDK;
 
 const DATAFILE_URL =
   "https://featurevisor-example-cloudflare.pages.dev/production/datafile-tag-all.json";
