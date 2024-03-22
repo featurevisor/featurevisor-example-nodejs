@@ -2,6 +2,10 @@
 
 An example Node.js app using [Featurevisor SDK](https://featurevisor.com).
 
+## Requirements
+
+See required Node.js version in [`.nvmrc`](./.nvmrc) file.
+
 ## Installation
 
 ```
