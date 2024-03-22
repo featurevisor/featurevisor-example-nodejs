@@ -1,9 +1,23 @@
-// import { createInstance } from "@featurevisor/sdk";
-const { createInstance } = require("@featurevisor/sdk");
+/**
+ * Import Featurevisor SDK
+ */
 
+// If you are using `.mjs` files or have `type: module` in your `package.json`, you can use `import` syntax.
+import FeaturevisorSDK from "@featurevisor/sdk";
+const { createInstance } = FeaturevisorSDK;
+
+// otherwise, use `require` syntax
+// const { createInstance } = require("@featurevisor/sdk");
+
+/**
+ * Constants
+ */
 const DATAFILE_URL =
   "https://featurevisor-example-cloudflare.pages.dev/production/datafile-tag-all.json";
 
+/**
+ * Main
+ */
 async function main() {
   const f = createInstance({
     datafileUrl: DATAFILE_URL,
