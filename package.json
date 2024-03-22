@@ -1,6 +1,7 @@
 {
   "name": "featurevisor-example-nodejs",
   "private": true,
+  "type": "module",
   "version": "1.0.0",
   "description": "Example Node.js app using Featurevisor SDK",
   "main": "index.js",
