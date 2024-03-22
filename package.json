@@ -1,0 +1,14 @@
+{
+  "name": "featurevisor-example-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@featurevisor/sdk": "^1.11.1"
+  }
+}
