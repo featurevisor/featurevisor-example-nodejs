@@ -3,7 +3,7 @@
  */
 
 // If you are using `.mjs` files or have `type: module` in your `package.json`, you can use `import` syntax.
-import { createInstance, FeaturevisorInstance } from "@featurevisor/sdk";
+import { createInstance } from "@featurevisor/sdk";
 
 // otherwise, use `require` syntax
 // const { createInstance } = require("@featurevisor/sdk");
