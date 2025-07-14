@@ -12,25 +12,25 @@ import { createInstance } from "@featurevisor/sdk";
  * Constants
  */
 const DATAFILE_URL =
-  "https://featurevisor-example-cloudflare.pages.dev/production/datafile-tag-all.json";
+  "https://featurevisor-example-cloudflare.pages.dev/production/featurevisor-tag-all.json";
 
 /**
  * Main
  */
 async function main() {
+  const datafileContent = await fetch(DATAFILE_URL)
+    .then((res) => res.json());
+
   const f = createInstance({
-    datafileUrl: DATAFILE_URL,
-    onReady: function () {
-      console.log("Featurevisor SDK is ready");
-    },
+    datafile: datafileContent,
+    context: {
+      userId: "123"
+    }
   });
 
-  await f.onReady();
-
   const featureKey = "my_feature";
-  const context = { userId: "123" };
 
-  const isEnabled = f.isEnabled(featureKey, context);
+  const isEnabled = f.isEnabled(featureKey);
 
   console.log(`Feature "${featureKey}" is ${isEnabled ? "enabled" : "disabled"}`);
 }
