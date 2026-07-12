@@ -3,7 +3,7 @@
  */
 
 // If you are using `.mjs` files or have `type: module` in your `package.json`, you can use `import` syntax.
-import { createInstance } from "@featurevisor/sdk";
+import { createFeaturevisor } from "@featurevisor/sdk";
 
 // otherwise, use `require` syntax
 // const { createInstance } = require("@featurevisor/sdk");
@@ -21,7 +21,7 @@ async function main() {
   const datafileContent = await fetch(DATAFILE_URL)
     .then((res) => res.json());
 
-  const f = createInstance({
+  const f = createFeaturevisor({
     datafile: datafileContent,
     context: {
       userId: "123"
