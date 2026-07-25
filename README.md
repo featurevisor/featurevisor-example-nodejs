@@ -8,14 +8,14 @@ See required Node.js version in [`.nvmrc`](./.nvmrc) file.
 
 ## Installation
 
-```
-$ npm ci
+```sh
+npm ci
 ```
 
 ## Running the app
 
-```
-$ node ./src/index.js
+```sh
+npm start
 ```
 
 ## License

@@ -11,6 +11,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@featurevisor/sdk": "^3.0.1"
+    "@featurevisor/sdk": "^3.2.0"
   }
 }
