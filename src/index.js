@@ -18,7 +18,13 @@ const DATAFILE_URL =
  * Main
  */
 async function main() {
-  const datafileContent = await fetch(DATAFILE_URL).then((res) => res.json());
+  const response = await fetch(DATAFILE_URL);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch datafile: HTTP ${response.status}`);
+  }
+
+  const datafileContent = await response.json();
 
   const f = createFeaturevisor({
     datafile: datafileContent,
@@ -27,11 +33,18 @@ async function main() {
     },
   });
 
-  const featureKey = "my_feature";
+  try {
+    const featureKey = "my_feature";
 
-  const isEnabled = f.isEnabled(featureKey);
+    const isEnabled = f.isEnabled(featureKey);
 
-  console.log(`Feature "${featureKey}" is ${isEnabled ? "enabled" : "disabled"}`);
+    console.log(`Feature "${featureKey}" is ${isEnabled ? "enabled" : "disabled"}`);
+  } finally {
+    await f.close();
+  }
 }
 
-main();
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
